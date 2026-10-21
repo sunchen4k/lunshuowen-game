@@ -70,7 +70,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .qtext.word{font-size:34px;font-weight:700;text-align:center;letter-spacing:6px;padding:12px 0}
 
 .opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.opts.dim{grid-template-columns:1fr}
+.opts.onecol{grid-template-columns:1fr}
+.opt.sent{font-family:var(--serif);font-size:13.5px;text-align:left;letter-spacing:0;line-height:1.75;font-weight:600;padding:13px 14px}
 .opt{position:relative;padding:15px 12px;border-radius:14px;border:1px solid var(--line);background:var(--surface);font-size:16px;font-weight:700;text-align:center;letter-spacing:1px;box-shadow:var(--shadow);transition:all .12s;overflow:hidden}
 .opt:active{transform:scale(.97)}
 .opt .dcolor{position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--oc,#c9b99a)}
@@ -147,7 +148,7 @@ function saveWeak(w){ localStorage.setItem(LS_WEAK, JSON.stringify(w)); }
 let weak = loadWeak();
 let theme = localStorage.getItem('lunshuowen_game_theme') || 'light';
 
-const MODES = { mix:{t:'混合模式', d:'问题 · 好处 · 维度 随机出题'}, buzu:{t:'认理由 · 看问题', d:'给你「客观不足」，选它是哪个理由'}, you:{t:'认理由 · 看好处', d:'给你「主观优点」，选它是哪个理由'}, dim:{t:'归维度', d:'给你理由关键词，选它属于哪个维度'} };
+const MODES = { mix:{t:'混合模式', d:'问题 · 好处 · 选句 · 维度 随机出题'}, buzu:{t:'认理由 · 看问题', d:'给你「客观不足」，选它是哪个理由'}, you:{t:'认理由 · 看好处', d:'给你「主观优点」，选它是哪个理由'}, sent:{t:'看理由 · 选句子', d:'给你理由关键词，选它的句子（不足/优点）'}, dim:{t:'归维度', d:'给你理由关键词，选它属于哪个维度'} };
 const ROUNDS = { r10:{n:10,t:'10 题'}, r20:{n:20,t:'20 题'}, inf:{n:0,t:'无限 · 3 条命'} };
 const QTIME = 12000;
 
@@ -159,7 +160,7 @@ function renderStart(){
   app.innerHTML = `<div class="start">
     <div class="start-emoji">🎯</div>
     <h2>理由闯关</h2>
-    <p class="lead">用 5 大维度、23 个理由练「论说文」——<br>看问题 / 看好处，猜这是哪个理由；<br>答完自动弹「背卡」，错的自动多出、反复练。</p>
+    <p class="lead">用 5 大维度、23 个理由练「论说文」——<br>看问题 / 看好处猜理由，看理由选句子、归维度；<br>答完自动弹「背卡」，错的自动多出、反复练。</p>
     <div class="panel">
       <h3>题型</h3>
       <div class="seg" id="modeSeg">
@@ -186,24 +187,28 @@ function pickReason(){
   return REASONS[REASONS.length-1];
 }
 function pickType(){
-  if(game.mode==='mix') return ['buzu','you','dim'][Math.floor(Math.random()*3)];
+  if(game.mode==='mix') return ['buzu','you','sent','dim'][Math.floor(Math.random()*4)];
   return game.mode;
 }
-function makeOptions(reason, type){
-  if(type==='dim'){
-    return shuffle(DIMS.map(d=>({txt:d.name, ok:d.id===reason.dim, color:d.color})));
-  }
+function makeWordOptions(reason){
   const decoys = shuffle(REASONS.filter(r=>r.id!==reason.id)).slice(0,3).map(r=>r.word);
   return shuffle([reason.word, ...decoys]).map(w=>({txt:w, ok:w===reason.word}));
+}
+function makeDimOptions(reason){
+  return shuffle(DIMS.map(d=>({txt:d.name, ok:d.id===reason.dim, color:d.color})));
+}
+function makeSentOptions(reason, sub){
+  const decoys = shuffle(REASONS.filter(r=>r.id!==reason.id)).slice(0,3).map(r=>r[sub]);
+  return shuffle([reason[sub], ...decoys]).map(s=>({txt:s, ok:s===reason[sub]}));
 }
 function genQuestion(){
   const reason = pickReason();
   const type = pickType();
-  const options = makeOptions(reason, type);
-  let content, prompt;
-  if(type==='buzu'){ content = reason.buzu; prompt = '这是哪个理由的「客观不足」？'; }
-  else if(type==='you'){ content = reason.you; prompt = '这是哪个理由的「主观优点」？'; }
-  else { content = reason.word; prompt = '这个理由属于哪个维度？'; }
+  let content, prompt, options;
+  if(type==='buzu'){ content = reason.buzu; prompt = '这是哪个理由的「客观不足」？'; options = makeWordOptions(reason); }
+  else if(type==='you'){ content = reason.you; prompt = '这是哪个理由的「主观优点」？'; options = makeWordOptions(reason); }
+  else if(type==='sent'){ const sub = Math.random()<0.5?'buzu':'you'; content = reason.word; prompt = sub==='buzu'?'哪一句是这个理由的「客观不足」？':'哪一句是这个理由的「主观优点」？'; options = makeSentOptions(reason, sub); }
+  else { content = reason.word; prompt = '这个理由属于哪个维度？'; options = makeDimOptions(reason); }
   return { reason, type, options, content, prompt };
 }
 
@@ -233,11 +238,11 @@ function renderQuestion(){
     <div class="timebar"><div class="fill" id="tfill"></div></div>
     <div class="qcard" style="--dim:${dimColor(q.reason.dim)}">
       <span class="qtype">${MODES[q.type].t}</span>
-      <div class="qtext ${q.type==='dim'?'word':''}">${esc(q.content)}</div>
+      <div class="qtext ${(q.type==='dim'||q.type==='sent')?'word':''}">${esc(q.content)}</div>
       <div style="font-size:12px;color:var(--ink-3);margin-top:12px">${esc(q.prompt)}</div>
     </div>
-    <div class="opts ${q.type==='dim'?'dim':''}">
-      ${q.options.map((o,idx)=>`<button class="opt" data-opt="${idx}" ${o.color?`style="--oc:${o.color}"`:''}>${o.color?`<span class="dcolor"></span>`:''}${esc(o.txt)}</button>`).join('')}
+    <div class="opts ${(q.type==='dim'||q.type==='sent')?'onecol':''}">
+      ${q.options.map((o,idx)=>`<button class="opt ${q.type==='sent'?'sent':''}" data-opt="${idx}" ${o.color?`style="--oc:${o.color}"`:''}>${o.color?`<span class="dcolor"></span>`:''}${esc(o.txt)}</button>`).join('')}
     </div>
   </div>`;
   startTimer();
