@@ -28,58 +28,46 @@ html,body{height:100%}
 body{font-family:var(--sans);background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
 .wrap{max-width:600px;margin:0 auto;min-height:100vh;padding:18px 16px 40px;display:flex;flex-direction:column}
-
-/* 顶部 */
 .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
 .brand h1{font-family:var(--serif);font-size:22px;letter-spacing:2px;font-weight:700}
 .brand p{font-size:12px;color:var(--ink-3);margin-top:2px;letter-spacing:1px}
 .icon-btn{width:38px;height:38px;border-radius:11px;border:1px solid var(--line);background:var(--surface-2);display:grid;place-items:center;color:var(--ink-2)}
 .icon-btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-
-/* 开始页 */
-.start{flex:1;display:flex;flex-direction:column;justify-content:center;gap:22px;padding-top:20px}
-.start-emoji{font-size:54px;text-align:center;line-height:1}
-.start h2{font-family:var(--serif);font-size:30px;text-align:center;letter-spacing:3px;font-weight:700}
-.start .lead{text-align:center;color:var(--ink-2);font-size:14px;line-height:1.7}
-.panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow)}
-.panel h3{font-size:13px;color:var(--ink-2);letter-spacing:2px;margin-bottom:12px;font-weight:600}
+.start{flex:1;display:flex;flex-direction:column;justify-content:center;gap:18px;padding-top:16px}
+.start-emoji{font-size:50px;text-align:center;line-height:1}
+.start h2{font-family:var(--serif);font-size:28px;text-align:center;letter-spacing:3px;font-weight:700}
+.start .lead{text-align:center;color:var(--ink-2);font-size:13px;line-height:1.7}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:var(--shadow)}
+.panel h3{font-size:12px;color:var(--ink-2);letter-spacing:2px;margin-bottom:12px;font-weight:600}
 .seg{display:flex;flex-wrap:wrap;gap:8px}
 .seg button{flex:1;min-width:76px;padding:10px 8px;font-size:13px;font-weight:600;border-radius:11px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink-2);transition:all .15s}
 .seg button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.bank-seg button.on{background:var(--gold);border-color:var(--gold)}
 .weak-note{font-size:12px;color:var(--gold);margin-top:10px;text-align:center}
 .big-btn{width:100%;padding:15px;font-size:17px;font-weight:700;letter-spacing:3px;border-radius:14px;background:var(--accent);color:#fff;box-shadow:var(--shadow);transition:transform .1s,filter .15s}
-.big-btn:active{transform:scale(.98)}
-.big-btn:hover{filter:brightness(1.06)}
-
-/* 游戏页 */
+.big-btn:active{transform:scale(.98)} .big-btn:hover{filter:brightness(1.06)}
 .status{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
 .stat{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--ink-2)}
 .stat .n{color:var(--ink);font-variant-numeric:tabular-nums}
-.stat.score .n{color:var(--gold)}
-.stat.combo .n{color:var(--accent)}
+.stat.score .n{color:var(--gold)} .stat.combo .n{color:var(--accent)}
 .hearts{color:var(--red);font-size:15px;letter-spacing:2px}
 .progress-txt{margin-left:auto;font-size:12px;color:var(--ink-3)}
 .timebar{height:5px;background:var(--line);border-radius:99px;overflow:hidden;margin-bottom:16px}
 .timebar .fill{height:100%;width:100%;background:linear-gradient(90deg,var(--green),var(--gold));border-radius:99px}
-.timebar .fill.warn{background:linear-gradient(90deg,var(--red),var(--gold))}
-
 .qcard{background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow-lg);padding:24px 20px;margin-bottom:16px;position:relative;overflow:hidden}
 .qcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--dim,#c9b99a)}
 .qtype{display:inline-block;font-size:11px;font-weight:700;letter-spacing:1px;padding:3px 10px;border-radius:99px;background:var(--surface-2);color:var(--ink-2);margin-bottom:14px}
 .qtext{font-family:var(--serif);font-size:17px;line-height:1.9;color:var(--ink);text-align:justify}
-.qtext.word{font-size:34px;font-weight:700;text-align:center;letter-spacing:6px;padding:12px 0}
-
+.qtext.word{font-size:32px;font-weight:700;text-align:center;letter-spacing:6px;padding:10px 0}
 .opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .opts.onecol{grid-template-columns:1fr}
-.opt.sent{font-family:var(--serif);font-size:13.5px;text-align:left;letter-spacing:0;line-height:1.75;font-weight:600;padding:13px 14px}
 .opt{position:relative;padding:15px 12px;border-radius:14px;border:1px solid var(--line);background:var(--surface);font-size:16px;font-weight:700;text-align:center;letter-spacing:1px;box-shadow:var(--shadow);transition:all .12s;overflow:hidden}
 .opt:active{transform:scale(.97)}
+.opt.sent{font-family:var(--serif);font-size:13.5px;text-align:left;letter-spacing:0;line-height:1.75;font-weight:600;padding:13px 14px}
 .opt .dcolor{position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--oc,#c9b99a)}
 .opt.correct{background:var(--green);color:#fff;border-color:var(--green)}
 .opt.wrong{background:var(--red);color:#fff;border-color:var(--red)}
 .opt.dimmed{opacity:.4}
-
-/* 背卡 */
 .bkcard{background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow-lg);padding:20px;margin-top:16px;animation:pop .25s ease}
 @keyframes pop{from{transform:translateY(10px);opacity:0}to{transform:none;opacity:1}}
 .bk-head{display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap}
@@ -87,15 +75,12 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 .dimchip{font-size:11px;font-weight:700;color:#fff;padding:3px 10px;border-radius:99px;letter-spacing:1px}
 .bk-block{margin-top:12px;padding:12px;border-radius:12px;background:var(--surface-2)}
 .bk-block .tag{font-size:11px;font-weight:700;letter-spacing:1px;margin-bottom:6px}
-.bk-block.buzu .tag{color:var(--red)}
-.bk-block.you .tag{color:var(--green)}
+.bk-block.buzu .tag{color:var(--red)} .bk-block.you .tag{color:var(--green)}
 .bk-block .txt{font-family:var(--serif);font-size:15px;line-height:1.85;color:var(--ink);text-align:justify}
 .feedback{text-align:center;font-size:13px;font-weight:700;margin-top:10px;letter-spacing:1px}
 .feedback.ok{color:var(--green)} .feedback.no{color:var(--red)}
 .next-btn{width:100%;margin-top:14px;padding:14px;font-size:16px;font-weight:700;letter-spacing:2px;border-radius:13px;background:var(--accent);color:#fff}
 .next-btn:active{transform:scale(.98)}
-
-/* 结束页 */
 .over{flex:1;display:flex;flex-direction:column;gap:18px;justify-content:center}
 .over .big{font-size:54px;text-align:center}
 .over h2{font-family:var(--serif);text-align:center;font-size:26px;letter-spacing:2px}
@@ -119,7 +104,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 <body>
 <div class="wrap">
   <div class="top">
-    <div class="brand"><h1>论说文 · 理由闯关</h1><p id="brandSub">5 大维度 · 23 个理由</p></div>
+    <div class="brand"><h1>论说文 · 理由闯关</h1><p id="brandSub">正方 23 理由 + 反方 9 理由</p></div>
     <button class="icon-btn" id="themeBtn" aria-label="主题">
       <svg id="icSun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>
       <svg id="icMoon" viewBox="0 0 24 24" style="display:none"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
@@ -131,9 +116,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 <script>
 /* ================= 数据（构建时注入） ================= */
 const DIMS = [{"id":"external","name":"外部环境","color":"#5b7ca3"},{"id":"internal","name":"内部短板","color":"#a9783f"},{"id":"self","name":"对自身","color":"#4a8a6f"},{"id":"team","name":"对团队","color":"#7a6aa3"},{"id":"society","name":"对社会","color":"#bb5a4a"}];
-const REASONS = [{"id":"yingjia","word":"赢家通吃","buzu":"随着竞争边界扩大，资源与关注度向头部聚集。落后者若缺乏主动求变，极易陷入“马太效应”的恶性循环，在激烈竞争中被边缘化。","you":"有助于我们把握时代机遇，也有助于积累长期优势，在不断变化的环境中实现更好的成长与发展。","dim":"external"},{"id":"xuqiu","word":"需求升级","buzu":"当前，低端粗放的供给模式已难以匹配时代节奏。同质化竞争严重，面对大众对情绪体验、品质质感的高阶诉求，固守旧有模式不仅会造成严重的供需错配，更会让企业深陷价格战的泥潭。","you":"有助于打破低端同质化的僵局，精准填补供需错配的鸿沟，从而引发用户情绪共鸣，最终提升大众的获得感与幸福感。","dim":"external"},{"id":"jishu","word":"技术变革","buzu":"技术迭代周期不断缩短，旧模式正加速失效。固守传统优势者，极易在跨界竞争与效率碾压中陷入被动，最终被时代无情淘汰。","you":"有助于打破旧有路径依赖的困局，精准填补效率洼地，从而抓住时代机遇，实现从“能做”向“做好、做极致”的质变。","dim":"external"},{"id":"xinxi","word":"信息爆炸","buzu":"信息过载成常态，海量资讯真假交织，情绪表达常盖过事实。算法推送更让人困于信息茧房，极易引发认知迷茫。","you":"有助于打破信息茧房的封闭圈，抵御情绪化舆论干扰，从而提升信息甄别力，做出清醒理性的决策。","dim":"external"},{"id":"duoyuan","word":"多元包容","buzu":"传统刚性管控难以为继。随着平等意识觉醒，依靠权威发号施令往往不再有效，反而极易导致人才流失与团队涣散。","you":"有助于脱离刚性约束的困境，填补尊重需求的空缺，从而唤醒个体自觉，凝聚起强大的团队合力。","dim":"external"},{"id":"shidai","word":"时代趋势","buzu":"随着当前宏观环境深刻变革，人口红利逐渐消退，高耗能模式逐遭淘汰。旧思路难以应对新的变化，固守老路往往会被市场淘汰。","you":"有助于打破旧有路径依赖，精准规避合规风险，从而在变局中把握机遇，实现高质量的长远发展。","dim":"external"},{"id":"siwei","word":"思维陈旧","buzu":"过去的成功极易形成路径依赖，思维定式让人习惯用旧经验解决新问题。一旦环境改变，经验主义便会引发认知偏差，最终导致竞争力丧失。","you":"有助于打破路径依赖，矫正认知偏差，从而跳出经验陷阱，在变革中重塑核心竞争力。","dim":"internal"},{"id":"nengli","word":"能力不足","buzu":"任何主体都难面面俱到。专业欠缺、资源匮乏等短板，易让人陷入“心有余而力不足”的困境，盲目闭门造车只会错失良机。","you":"有助于打破资源匮乏的瓶颈，填补专业欠缺的短板，从而扬长避短，实现借力破局与长远发展。","dim":"internal"},{"id":"pingjing","word":"瓶颈太多","buzu":"发展常遇瓶颈，增长放缓、创新乏力、资源错配交织。原有模式触及天花板，若安于现状便会陷入停滞与内卷化。","you":"有助于打破原有模式的天花板，填补资源错配与创新乏力的短板，从而破除内卷，实现破局升级。","dim":"internal"},{"id":"hexin","word":"核心竞争力","buzu":"市场同质化严重，价格战激烈。缺乏独特优势极易陷入低水平内卷，利润空间被严重挤压，难获发展主动权。","you":"有助于摆脱低价竞争的泥潭，打破缺乏独特优势的僵局，从而构筑差异化壁垒，实现长远发展。","dim":"self"},{"id":"jiangben","word":"降本增效","buzu":"原材料上涨、人力成本增加，管理效率低下。粗放式的“人海战术”难以为继，利润空间被严重挤压，缺乏持续竞争力。","you":"有助于打破粗放增长的困局，填补管理效率低下的短板，从而提升人效，在激烈竞争中夯实生存根基。","dim":"self"},{"id":"jingjin","word":"专业精进","buzu":"行业追风口、炒概念，人心浮躁。“样样通、样样松”的万金油模式难以为继，极易在激烈竞争中被替代。","you":"有助于打破浮躁跟风的困局，填补缺乏核心竞争力的短板，从而在洗牌中站稳脚跟，实现长远发展。","dim":"self"},{"id":"xinren","word":"信任资本","buzu":"缺乏信任则交易成本高企，合作机会锐减。主体间互相防备，极易陷入内耗，难以形成稳定的协作关系。","you":"有助于打破信任缺失的壁垒，填补合作匮乏的短板，从而积累口碑，赢得用户长期信任。","dim":"self"},{"id":"pinpai","word":"品牌资产","buzu":"同质化竞争严重，产品易被模仿。缺乏品牌资产，极易陷入低价泥潭，无法建立用户偏好，难以获取长期溢价。","you":"有助于打破同质化替代的困局，填补情感连接的缺失，从而占领用户心智，构筑品牌护城河。","dim":"self"},{"id":"nianxing","word":"用户粘性","buzu":"市场竞争加剧，获客成本日益高昂。单靠粗放式“拉新”难以为继，缺乏黏性极易导致用户流失，难以持续增长。","you":"有助于打破流量枯竭的困局，填补信任与情感连接的缺失，从而提升复购，实现长期价值增长。","dim":"self"},{"id":"fangxian","word":"防范风险","buzu":"不确定性是常态，政策波动与“黑天鹅”事件频发。无视规则、盲目扩张、布局单一，表面提升效率，实则留下隐患。","you":"有助于打破盲目扩张的隐患，填补风控缺失的短板，从而筑牢防线，实现长远发展。","dim":"self"},{"id":"changqi","word":"长期主义","buzu":"短期主义追逐眼前利益，忽视长远布局。缺乏战略定力极易陷入被动，遭遇波动便难以为继，最终被市场淘汰。","you":"有助于打破短视逐利的被动困局，填补长远布局的缺失，从而锚定目标穿越周期，赢得长远未来。","dim":"self"},{"id":"jili","word":"激励人心","buzu":"人才竞争激烈，仅靠薪酬难留人。缺乏尊重与认可，极易导致人才流失，沦为被动执行者，难以激发组织活力。","you":"有助于打破单靠物质激励的局限，填补尊重与自我实现的缺失，从而增强归属感，让人才从“要我干”转向“我要干”。","dim":"team"},{"id":"ningju","word":"凝聚团队","buzu":"团队涣散，内耗严重。个人能力虽强却难成合力，导致沟通与信任成本高企，严重限制团队上限，陷入被动服从。","you":"有助于打破涣散困局，填补信任缺失，从而增强归属感，实现从“被动服从”向“主动认同”的飞跃。","dim":"team"},{"id":"jisi","word":"集思广益","buzu":"封闭环境扼杀创新，个体思考存在局限。单一视角易形成认知盲区，主观判断易生偏差，单打独斗难破思维固化。","you":"有助于打破思维固化的局限，填补单一视角的盲区，从而激发集体智慧，营造创新氛围。","dim":"team"},{"id":"yinling","word":"引领行业","buzu":"市场若只以低价论成败，用心做品质者便失去动力。低标准竞争引发恶性循环，最终无人独善其身，共同承受行业衰败代价。","you":"有助于打破低标准内卷的困局，填补正向价值指引的缺失，从而重塑行业生态，带动社会共同进步。","dim":"society"},{"id":"shengtai","word":"生态共建","buzu":"单打独斗的零和博弈已难以为继。恶性竞争消耗行业整体价值，陷入价格战怪圈，最终削弱所有人的生存空间。","you":"有助于打破零和博弈的困局，填补内部消耗的短板，从而赋能生态伙伴，实现共生共赢与良性循环。","dim":"society"},{"id":"shehui","word":"社会责任","buzu":"企业若只追求经济利益而忽视社会责任，无异于社会“毒瘤”。极易导致公众信任缺失，恶化社会风气，最终被市场抛弃，难以长远发展。","you":"有助于打破只顾逐利的困局，填补公众信任的缺失，从而实现商业价值与社会价值的统一。","dim":"society"}];
+const REASONS = [{"id":"yingjia","word":"赢家通吃","buzu":"随着竞争边界扩大，资源与关注度向头部聚集。落后者若缺乏主动求变，极易陷入“马太效应”的恶性循环，在激烈竞争中被边缘化。","you":"有助于我们把握时代机遇，也有助于积累长期优势，在不断变化的环境中实现更好的成长与发展。","dim":"external"},{"id":"xuqiu","word":"需求升级","buzu":"当前，低端粗放的供给模式已难以匹配时代节奏。同质化竞争严重，面对大众对情绪体验、品质质感的高阶诉求，固守旧有模式不仅会造成严重的供需错配，更会让企业深陷价格战的泥潭。","you":"有助于打破低端同质化的僵局，精准填补供需错配的鸿沟，从而引发用户情绪共鸣，最终提升大众的获得感与幸福感。","dim":"external"},{"id":"jishu","word":"技术变革","buzu":"技术迭代周期不断缩短，旧模式正加速失效。固守传统优势者，极易在跨界竞争与效率碾压中陷入被动，最终被时代无情淘汰。","you":"有助于打破旧有路径依赖的困局，精准填补效率洼地，从而抓住时代机遇，实现从“能做”向“做好、做极致”的质变。","dim":"external"},{"id":"xinxi","word":"信息爆炸","buzu":"信息过载成常态，海量资讯真假交织，情绪表达常盖过事实。算法推送更让人困于信息茧房，极易引发认知迷茫。","you":"有助于打破信息茧房的封闭圈，抵御情绪化舆论干扰，从而提升信息甄别力，做出清醒理性的决策。","dim":"external"},{"id":"duoyuan","word":"多元包容","buzu":"传统刚性管控难以为继。随着平等意识觉醒，依靠权威发号施令往往不再有效，反而极易导致人才流失与团队涣散。","you":"有助于脱离刚性约束的困境，填补尊重需求的空缺，从而唤醒个体自觉，凝聚起强大的团队合力。","dim":"external"},{"id":"shidai","word":"时代趋势","buzu":"随着当前宏观环境深刻变革，人口红利逐渐消退，高耗能模式逐遭淘汰。旧思路难以应对新的变化，固守老路往往会被市场淘汰。","you":"有助于打破旧有路径依赖，精准规避合规风险，从而在变局中把握机遇，实现高质量的长远发展。","dim":"external"},{"id":"siwei","word":"思维陈旧","buzu":"过去的成功极易形成路径依赖，思维定式让人习惯用旧经验解决新问题。一旦环境改变，经验主义便会引发认知偏差，最终导致竞争力丧失。","you":"有助于打破路径依赖，矫正认知偏差，从而跳出经验陷阱，在变革中重塑核心竞争力。","dim":"internal"},{"id":"nengli","word":"能力不足","buzu":"任何主体都难面面俱到。专业欠缺、资源匮乏等短板，易让人陷入“心有余而力不足”的困境，盲目闭门造车只会错失良机。","you":"有助于打破资源匮乏的瓶颈，填补专业欠缺的短板，从而扬长避短，实现借力破局与长远发展。","dim":"internal"},{"id":"pingjing","word":"瓶颈太多","buzu":"发展常遇瓶颈，增长放缓、创新乏力、资源错配交织。原有模式触及天花板，若安于现状便会陷入停滞与内卷化。","you":"有助于打破原有模式的天花板，填补资源错配与创新乏力的短板，从而破除内卷，实现破局升级。","dim":"internal"},{"id":"hexin","word":"核心竞争力","buzu":"市场同质化严重，价格战激烈。缺乏独特优势极易陷入低水平内卷，利润空间被严重挤压，难获发展主动权。","you":"有助于摆脱低价竞争的泥潭，打破缺乏独特优势的僵局，从而构筑差异化壁垒，实现长远发展。","dim":"self"},{"id":"jiangben","word":"降本增效","buzu":"原材料上涨、人力成本增加，管理效率低下。粗放式的“人海战术”难以为继，利润空间被严重挤压，缺乏持续竞争力。","you":"有助于打破粗放增长的困局，填补管理效率低下的短板，从而提升人效，在激烈竞争中夯实生存根基。","dim":"self"},{"id":"jingjin","word":"专业精进","buzu":"行业追风口、炒概念，人心浮躁。“样样通、样样松”的万金油模式难以为继，极易在激烈竞争中被替代。","you":"有助于打破浮躁跟风的困局，填补缺乏核心竞争力的短板，从而在洗牌中站稳脚跟，实现长远发展。","dim":"self"},{"id":"xinren","word":"信任资本","buzu":"缺乏信任则交易成本高企，合作机会锐减。主体间互相防备，极易陷入内耗，难以形成稳定的协作关系。","you":"有助于打破信任缺失的壁垒，填补合作匮乏的短板，从而积累口碑，赢得用户长期信任。","dim":"self"},{"id":"pinpai","word":"品牌资产","buzu":"同质化竞争严重，产品易被模仿。缺乏品牌资产，极易陷入低价泥潭，无法建立用户偏好，难以获取长期溢价。","you":"有助于打破同质化替代的困局，填补情感连接的缺失，从而占领用户心智，构筑品牌护城河。","dim":"self"},{"id":"nianxing","word":"用户粘性","buzu":"市场竞争加剧，获客成本日益高昂。单靠粗放式“拉新”难以为继，缺乏黏性极易导致用户流失，难以持续增长。","you":"有助于打破流量枯竭的困局，填补信任与情感连接的缺失，从而提升复购，实现长期价值增长。","dim":"self"},{"id":"fangxian","word":"防范风险","buzu":"不确定性是常态，政策波动与“黑天鹅”事件频发。无视规则、盲目扩张、布局单一，表面提升效率，实则留下隐患。","you":"有助于打破盲目扩张的隐患，填补风控缺失的短板，从而筑牢防线，实现长远发展。","dim":"self"},{"id":"changqi","word":"长期主义","buzu":"短期主义追逐眼前利益，忽视长远布局。缺乏战略定力极易陷入被动，遭遇波动便难以为继，最终被市场淘汰。","you":"有助于打破短视逐利的被动困局，填补长远布局的缺失，从而锚定目标穿越周期，赢得长远未来。","dim":"self"},{"id":"jili","word":"激励人心","buzu":"人才竞争激烈，仅靠薪酬难留人。缺乏尊重与认可，极易导致人才流失，沦为被动执行者，难以激发组织活力。","you":"有助于打破单靠物质激励的局限，填补尊重与自我实现的缺失，从而增强归属感，让人才从“要我干”转向“我要干”。","dim":"team"},{"id":"ningju","word":"凝聚团队","buzu":"团队涣散，内耗严重。个人能力虽强却难成合力，导致沟通与信任成本高企，严重限制团队上限，陷入被动服从。","you":"有助于打破涣散困局，填补信任缺失，从而增强归属感，实现从“被动服从”向“主动认同”的飞跃。","dim":"team"},{"id":"jisi","word":"集思广益","buzu":"封闭环境扼杀创新，个体思考存在局限。单一视角易形成认知盲区，主观判断易生偏差，单打独斗难破思维固化。","you":"有助于打破思维固化的局限，填补单一视角的盲区，从而激发集体智慧，营造创新氛围。","dim":"team"},{"id":"yinling","word":"引领行业","buzu":"市场若只以低价论成败，用心做品质者便失去动力。低标准竞争引发恶性循环，最终无人独善其身，共同承受行业衰败代价。","you":"有助于打破低标准内卷的困局，填补正向价值指引的缺失，从而重塑行业生态，带动社会共同进步。","dim":"society"},{"id":"shengtai","word":"生态共建","buzu":"单打独斗的零和博弈已难以为继。恶性竞争消耗行业整体价值，陷入价格战怪圈，最终削弱所有人的生存空间。","you":"有助于打破零和博弈的困局，填补内部消耗的短板，从而赋能生态伙伴，实现共生共赢与良性循环。","dim":"society"},{"id":"shehui","word":"社会责任","buzu":"企业若只追求经济利益而忽视社会责任，无异于社会“毒瘤”。极易导致公众信任缺失，恶化社会风气，最终被市场抛弃，难以长远发展。","you":"有助于打破只顾逐利的困局，填补公众信任的缺失，从而实现商业价值与社会价值的统一。","dim":"society"}];    // 正方 23
+const FANFANG = [{"id":"f-neizi","kw":"缺内部资源","fan":"没钱、没技术、没人才；资金链紧张、技术储备空白、专业团队缺失、研发力量匮乏、人力成本高","tui":"干中学、边干边学；借船出海、整合资源；在行动中积累、小步快跑、轻量化起步"},{"id":"f-waitiao","kw":"缺外部条件","fan":"政策不明、市场不成熟、行业规范空白；配套产业链不完善、基础设施落后、消费习惯未养成","tui":"行动倒逼、用成绩换政策；以点带面、创造发展环境、做行业拓荒者"},{"id":"f-pachengben","kw":"怕成本","fan":"投入太大、不划算；前期投入高昂、回本周期漫长、隐性成本多","tui":"算大账、看重长期价值；接受战略性亏损，今日投入换长期收益，短期省钱反而增加后期支出"},{"id":"f-pashibai","kw":"怕失败","fan":"万一失败了怎么办；投入全部打水漂、浪费时间精力、个人声誉受损","tui":"风险藏机遇、快速试错、最小可行性；停滞风险更大，失败是学费、成功是熬出来的"},{"id":"f-payulun","kw":"怕舆论","fan":"怕被骂、怕被排挤；同行非议、大众不理解、网络负面评价；亲友反对、群体孤立、动机被曲解","tui":"用结果说话，行动是最好的解释；坚守本心、不被外界杂音干扰"},{"id":"f-nanzhixing","kw":"难执行","fan":"制度方案难以落地，团队松散推诿、流程繁杂、基层抵触变革、员工主观积极性不足","tui":"完善配套机制、权责对等、简化流程、制度保障；拆分目标、分步落地"},{"id":"f-nanxietong","kw":"难协同","fan":"意见分歧、沟通不畅；部门利益冲突、认知差异大、信息不互通、互不信任","tui":"求同存异、寻找共同目标、换位思考共情；先解决情绪再沟通"},{"id":"f-nanfuzhong","kw":"难服众","fan":"被质疑、失控感；资历不足、下属不认可、话语权弱、方案说服力低、难以统筹","tui":"贡献换权威、以德服人、用专业服人；用结果证明自己、价值引领"},{"id":"f-nangaibian","kw":"难改变","fan":"长期沿用固有经验，现有模式运转稳定，变革存在未知风险、调整阻力巨大","tui":"经验只代表过去、不改变就被淘汰；拥抱变化、自我颠覆、与时俱进、主动破局"}];    // 反方 9
 
-/* ================= 工具 ================= */
 const $ = s => document.querySelector(s);
 const app = $('#app');
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -147,26 +132,49 @@ function loadWeak(){ try{ return JSON.parse(localStorage.getItem(LS_WEAK)||'{}')
 function saveWeak(w){ localStorage.setItem(LS_WEAK, JSON.stringify(w)); }
 let weak = loadWeak();
 let theme = localStorage.getItem('lunshuowen_game_theme') || 'light';
+let bank = 'zheng'; // 'zheng' 正方 / 'fan' 反方
 
-const MODES = { mix:{t:'混合模式', d:'问题 · 好处 · 选句 · 维度 随机出题'}, buzu:{t:'认理由 · 看问题', d:'给你「客观不足」，选它是哪个理由'}, you:{t:'认理由 · 看好处', d:'给你「主观优点」，选它是哪个理由'}, sent:{t:'看理由 · 选句子', d:'给你理由关键词，选它的句子（不足/优点）'}, dim:{t:'归维度', d:'给你理由关键词，选它属于哪个维度'} };
+const MODES_Z = {
+  mix:{t:'混合模式', d:'问题 · 好处 · 选句 · 维度 随机出题'},
+  buzu:{t:'认理由 · 看问题', d:'给你「客观不足」，选它是哪个理由'},
+  you:{t:'认理由 · 看好处', d:'给你「主观优点」，选它是哪个理由'},
+  sent:{t:'看理由 · 选句子', d:'给你理由关键词，选它的句子（不足/优点）'},
+  dim:{t:'归维度', d:'给你理由关键词，选它属于哪个维度'}
+};
+const MODES_F = {
+  mix:{t:'混合模式', d:'认理由 · 认推翻 随机出题'},
+  fan:{t:'认理由 · 看顾虑', d:'给你「反方顾虑」，选是哪个理由'},
+  tui:{t:'认推翻 · 看顾虑', d:'给你「反方顾虑」，选该怎么推翻'},
+  kw2tui:{t:'看理由 · 认推翻', d:'给你理由关键词，选该怎么推翻'}
+};
+function modesOf(){ return bank==='fan' ? MODES_F : MODES_Z; }
+function modeLabel(t){ const m = modesOf(); return (m[t]||{}).t || ''; }
+
 const ROUNDS = { r10:{n:10,t:'10 题'}, r20:{n:20,t:'20 题'}, inf:{n:0,t:'无限 · 3 条命'} };
 const QTIME = 12000;
-
-let game = null; // {mode, rounds, hearts, i, total, score, combo, correct, wrong, wrongIds, cur, answered, timer, timeLeft, startedAt}
+let game = null;
 
 function renderStart(){
   const best = parseInt(localStorage.getItem(LS_BEST)||'0',10);
   const weakN = Object.keys(weak).filter(id=>weak[id]>0).length;
+  const modes = modesOf();
   app.innerHTML = `<div class="start">
     <div class="start-emoji">🎯</div>
     <h2>理由闯关</h2>
-    <p class="lead">用 5 大维度、23 个理由练「论说文」——<br>看问题 / 看好处猜理由，看理由选句子、归维度；<br>答完自动弹「背卡」，错的自动多出、反复练。</p>
+    <p class="lead">${bank==='fan'?'用 9 个反方理由练「辩证段」——看顾虑认理由、认推翻。':'用 5 大维度、23 个理由练「正方理由」——看问题/好处认理由、选句子、归维度。'}<br>答完自动弹「背卡」，错的自动多出、反复练。</p>
+    <div class="panel">
+      <h3>内容</h3>
+      <div class="seg bank-seg" id="bankSeg">
+        <button data-bank="zheng" class="${bank==='zheng'?'on':''}">正方理由 · 23</button>
+        <button data-bank="fan" class="${bank==='fan'?'on':''}">反方理由 · 9</button>
+      </div>
+    </div>
     <div class="panel">
       <h3>题型</h3>
       <div class="seg" id="modeSeg">
-        ${Object.keys(MODES).map(k=>`<button data-mode="${k}" class="${k==='mix'?'on':''}">${MODES[k].t}</button>`).join('')}
+        ${Object.keys(modes).map(k=>`<button data-mode="${k}" class="${k==='mix'?'on':''}">${modes[k].t}</button>`).join('')}
       </div>
-      <div id="modeDesc" style="font-size:12px;color:var(--ink-3);margin-top:10px">${MODES.mix.d}</div>
+      <div id="modeDesc" style="font-size:12px;color:var(--ink-3);margin-top:10px">${modes.mix.d}</div>
     </div>
     <div class="panel">
       <h3>题量</h3>
@@ -174,82 +182,93 @@ function renderStart(){
         ${Object.keys(ROUNDS).map(k=>`<button data-round="${k}" class="${k==='r10'?'on':''}">${ROUNDS[k].t}</button>`).join('')}
       </div>
     </div>
-    ${best>0?`<div class="weak-note">🏆 历史最高分 ${best}${weakN?` · 已标记 ${weakN} 个弱项理由`:''}</div>`:''}
+    ${best>0?`<div class="weak-note">🏆 历史最高分 ${best}${weakN?` · 已标记 ${weakN} 个弱项`:''}</div>`:''}
     <button class="big-btn" id="startBtn">开始闯关</button>
   </div>`;
 }
 
-function pickReason(){
-  const ws = REASONS.map(r => 1 + (weak[r.id]||0)*2.5);
+function items(){ return bank==='fan' ? FANFANG : REASONS; }
+function pickItem(){
+  const pool = items();
+  const ws = pool.map(r => 1 + (weak[r.id]||0)*2.5);
   const total = ws.reduce((a,b)=>a+b,0);
   let x = Math.random()*total;
-  for(let i=0;i<REASONS.length;i++){ x -= ws[i]; if(x<=0) return REASONS[i]; }
-  return REASONS[REASONS.length-1];
+  for(let i=0;i<pool.length;i++){ x -= ws[i]; if(x<=0) return pool[i]; }
+  return pool[pool.length-1];
 }
 function pickType(){
-  if(game.mode==='mix') return ['buzu','you','sent','dim'][Math.floor(Math.random()*4)];
+  const pool = bank==='fan' ? ['fan','tui','kw2tui'] : ['buzu','you','sent','dim'];
+  if(game.mode==='mix') return pool[Math.floor(Math.random()*pool.length)];
   return game.mode;
 }
-function makeWordOptions(reason){
-  const decoys = shuffle(REASONS.filter(r=>r.id!==reason.id)).slice(0,3).map(r=>r.word);
-  return shuffle([reason.word, ...decoys]).map(w=>({txt:w, ok:w===reason.word}));
-}
-function makeDimOptions(reason){
-  return shuffle(DIMS.map(d=>({txt:d.name, ok:d.id===reason.dim, color:d.color})));
-}
-function makeSentOptions(reason, sub){
-  const decoys = shuffle(REASONS.filter(r=>r.id!==reason.id)).slice(0,3).map(r=>r[sub]);
-  return shuffle([reason[sub], ...decoys]).map(s=>({txt:s, ok:s===reason[sub]}));
+function makeOptions(item, type){
+  if(bank==='fan'){
+    if(type==='fan'){
+      const decoys = shuffle(FANFANG.filter(r=>r.id!==item.id)).slice(0,3).map(r=>r.kw);
+      return shuffle([item.kw, ...decoys]).map(w=>({txt:w, ok:w===item.kw}));
+    }
+    const decoys = shuffle(FANFANG.filter(r=>r.id!==item.id)).slice(0,3).map(r=>r.tui);
+    return shuffle([item.tui, ...decoys]).map(s=>({txt:s, ok:s===item.tui}));
+  }
+  if(type==='dim') return shuffle(DIMS.map(d=>({txt:d.name, ok:d.id===item.dim, color:d.color})));
+  if(type==='sent'){
+    const sub = Math.random()<0.5?'buzu':'you';
+    const decoys = shuffle(REASONS.filter(r=>r.id!==item.id)).slice(0,3).map(r=>r[sub]);
+    return shuffle([item[sub], ...decoys]).map(s=>({txt:s, ok:s===item[sub]}));
+  }
+  const decoys = shuffle(REASONS.filter(r=>r.id!==item.id)).slice(0,3).map(r=>r.word);
+  return shuffle([item.word, ...decoys]).map(w=>({txt:w, ok:w===item.word}));
 }
 function genQuestion(){
-  const reason = pickReason();
+  const reason = pickItem();
   const type = pickType();
   let content, prompt, options;
-  if(type==='buzu'){ content = reason.buzu; prompt = '这是哪个理由的「客观不足」？'; options = makeWordOptions(reason); }
-  else if(type==='you'){ content = reason.you; prompt = '这是哪个理由的「主观优点」？'; options = makeWordOptions(reason); }
-  else if(type==='sent'){ const sub = Math.random()<0.5?'buzu':'you'; content = reason.word; prompt = sub==='buzu'?'哪一句是这个理由的「客观不足」？':'哪一句是这个理由的「主观优点」？'; options = makeSentOptions(reason, sub); }
-  else { content = reason.word; prompt = '这个理由属于哪个维度？'; options = makeDimOptions(reason); }
+  if(bank==='fan'){
+    if(type==='fan'){ content = reason.fan; prompt = '这是哪个反方理由的「顾虑」？'; }
+    else if(type==='tui'){ content = reason.fan; prompt = '这段顾虑，该怎么「推翻」？'; }
+    else { content = reason.kw; prompt = '这个理由，该怎么「推翻」？'; }
+  } else {
+    if(type==='buzu'){ content = reason.buzu; prompt = '这是哪个理由的「客观不足」？'; }
+    else if(type==='you'){ content = reason.you; prompt = '这是哪个理由的「主观优点」？'; }
+    else if(type==='sent'){ const sub = Math.random()<0.5?'buzu':'you'; content = reason.word; prompt = sub==='buzu'?'哪一句是这个理由的「客观不足」？':'哪一句是这个理由的「主观优点」？'; }
+    else { content = reason.word; prompt = '这个理由属于哪个维度？'; }
+  }
+  options = makeOptions(reason, type);
   return { reason, type, options, content, prompt };
 }
 
 function startGame(mode, roundsKey){
-  game = {
-    mode, rounds: ROUNDS[roundsKey].n, hearts: 3, i:0, total:0,
-    score:0, combo:0, correct:0, wrong:0, wrongIds:[],
-    cur:null, answered:false, timer:null, startedAt:0
-  };
+  game = { mode, rounds:ROUNDS[roundsKey].n, hearts:3, i:0, total:0, score:0, combo:0, correct:0, wrong:0, wrongIds:[], cur:null, answered:false, timer:null, startedAt:0 };
   renderQuestion();
 }
 function renderQuestion(){
   const q = genQuestion();
-  game.cur = q;
-  game.answered = false;
-  game.startedAt = Date.now();
+  game.cur = q; game.answered = false; game.startedAt = Date.now();
   const totalTxt = game.rounds>0 ? `${game.i+1} / ${game.rounds}` : '';
   const heartsTxt = game.rounds===0 ? `<span class="hearts">${'❤'.repeat(game.hearts)}${'🤍'.repeat(3-game.hearts)}</span>` : '';
   const comboTxt = game.combo>=2 ? `<div class="stat combo">🔥 <span class="n">×${game.combo}</span></div>` : '';
+  const isWord = q.type==='dim' || q.type==='kw2tui';
+  const isSent = bank==='fan' ? (q.type!=='fan') : (q.type==='sent');
   app.innerHTML = `<div>
     <div class="status">
       <div class="stat score">⭐ <span class="n">${game.score}</span></div>
-      ${comboTxt}
-      ${heartsTxt}
-      <span class="progress-txt">${totalTxt}</span>
+      ${comboTxt}${heartsTxt}<span class="progress-txt">${totalTxt}</span>
     </div>
     <div class="timebar"><div class="fill" id="tfill"></div></div>
-    <div class="qcard" style="--dim:${dimColor(q.reason.dim)}">
-      <span class="qtype">${MODES[q.type].t}</span>
-      <div class="qtext ${(q.type==='dim'||q.type==='sent')?'word':''}">${esc(q.content)}</div>
+    <div class="qcard" style="--dim:${bank==='fan'?'#8a5b7d':dimColor(q.reason.dim)}">
+      <span class="qtype">${modeLabel(q.type)}</span>
+      <div class="qtext ${isWord?'word':''}">${esc(q.content)}</div>
       <div style="font-size:12px;color:var(--ink-3);margin-top:12px">${esc(q.prompt)}</div>
     </div>
-    <div class="opts ${(q.type==='dim'||q.type==='sent')?'onecol':''}">
-      ${q.options.map((o,idx)=>`<button class="opt ${q.type==='sent'?'sent':''}" data-opt="${idx}" ${o.color?`style="--oc:${o.color}"`:''}>${o.color?`<span class="dcolor"></span>`:''}${esc(o.txt)}</button>`).join('')}
+    <div class="opts ${(q.type==='dim'||isSent)?'onecol':''}">
+      ${q.options.map((o,idx)=>`<button class="opt ${isSent?'sent':''}" data-opt="${idx}" ${o.color?`style="--oc:${o.color}"`:''}>${o.color?`<span class="dcolor"></span>`:''}${esc(o.txt)}</button>`).join('')}
     </div>
   </div>`;
   startTimer();
 }
 function startTimer(){
   const fill = $('#tfill');
-  if(fill){ fill.className = 'fill'; fill.style.transition = 'none'; fill.style.width = '100%'; requestAnimationFrame(()=>{ requestAnimationFrame(()=>{ fill.style.transition = `width ${QTIME}ms linear`; fill.style.width = '0%'; }); }); }
+  if(fill){ fill.className='fill'; fill.style.transition='none'; fill.style.width='100%'; requestAnimationFrame(()=>{ requestAnimationFrame(()=>{ fill.style.transition=`width ${QTIME}ms linear`; fill.style.width='0%'; }); }); }
   clearTimeout(game.timer);
   game.timer = setTimeout(()=>{ if(!game.answered) answer(-1, true); }, QTIME);
 }
@@ -264,14 +283,12 @@ function answer(optIdx, isTimeout){
   const optEls = app.querySelectorAll('.opt');
   const elAt = idx => (optEls && optEls[idx]) || null;
   if(ok){
-    game.correct++;
-    game.combo++;
+    game.correct++; game.combo++;
     game.score += 100 + timeBonus() + (game.combo-1)*10;
     if(weak[q.reason.id]) weak[q.reason.id] = Math.max(0, weak[q.reason.id]-1);
     if(elAt(optIdx)) elAt(optIdx).classList.add('correct');
   } else {
-    game.wrong++;
-    game.combo = 0;
+    game.wrong++; game.combo = 0;
     weak[q.reason.id] = (weak[q.reason.id]||0)+1;
     game.wrongIds.push(q.reason.id);
     if(game.rounds===0) game.hearts--;
@@ -287,6 +304,13 @@ function renderBkCard(ok){
   const isLast = game.rounds>0 ? (game.i+1 >= game.rounds) : false;
   const dead = game.rounds===0 && game.hearts<=0;
   const nextLabel = (dead || isLast) ? '查看成绩' : '下一题';
+  const detail = bank==='fan'
+    ? `<div class="bk-head"><span class="bk-word">${esc(r.kw)}</span><span class="dimchip" style="background:#8a5b7d">反方理由</span></div>
+       <div class="bk-block buzu"><div class="tag">反方 · 顾虑</div><div class="txt">${esc(r.fan)}</div></div>
+       <div class="bk-block you"><div class="tag">推翻 · 话术</div><div class="txt">${esc(r.tui)}</div></div>`
+    : `<div class="bk-head"><span class="bk-word">${esc(r.word)}</span><span class="dimchip" style="background:${dimColor(r.dim)}">${dimName(r.dim)}</span></div>
+       <div class="bk-block buzu"><div class="tag">客观 · 不足</div><div class="txt">${esc(r.buzu)}</div></div>
+       <div class="bk-block you"><div class="tag">主观 · 优点</div><div class="txt">${esc(r.you)}</div></div>`;
   app.innerHTML = `<div>
     <div class="status">
       <div class="stat score">⭐ <span class="n">${game.score}</span></div>
@@ -295,14 +319,7 @@ function renderBkCard(ok){
       <span class="progress-txt">${game.rounds>0?`${game.i+1} / ${game.rounds}`:''}</span>
     </div>
     <div class="feedback ${ok?'ok':'no'}">${ok?`✅ 答对了！+${100+timeBonus()+(game.combo-1)*10} 分`:(game.rounds===0&&game.hearts<=0?'💔 答错了，生命耗尽':'❌ 答错了，记下这个理由')}</div>
-    <div class="bkcard">
-      <div class="bk-head">
-        <span class="bk-word">${esc(r.word)}</span>
-        <span class="dimchip" style="background:${dimColor(r.dim)}">${dimName(r.dim)}</span>
-      </div>
-      <div class="bk-block buzu"><div class="tag">客观 · 不足</div><div class="txt">${esc(r.buzu)}</div></div>
-      <div class="bk-block you"><div class="tag">主观 · 优点</div><div class="txt">${esc(r.you)}</div></div>
-    </div>
+    <div class="bkcard">${detail}</div>
     <button class="next-btn" id="nextBtn">${nextLabel}</button>
   </div>`;
 }
@@ -317,8 +334,10 @@ function renderOver(){
   const best = parseInt(localStorage.getItem(LS_BEST)||'0',10);
   if(game.score>best) localStorage.setItem(LS_BEST, String(game.score));
   const weakList = shuffle([...new Set(game.wrongIds)]).slice(0,8).map(id=>{
-    const r = REASONS.find(x=>x.id===id);
-    return r?`<div class="weak-item"><span class="w">${esc(r.word)}</span><span class="d" style="background:${dimColor(r.dim)}">${dimName(r.dim)}</span></div>`:'';
+    const r = (bank==='fan'?FANFANG:REASONS).find(x=>x.id===id);
+    const nm = r ? (bank==='fan'?r.kw:r.word) : '';
+    const dim = r && bank!=='fan' ? dimName(r.dim) : (bank==='fan'?'反方':'');
+    return r?`<div class="weak-item"><span class="w">${esc(nm)}</span><span class="d" style="background:${bank==='fan'?'#8a5b7d':dimColor(r.dim)}">${dim}</span></div>`:'';
   }).join('');
   const isNewBest = game.score>=best && best>0;
   app.innerHTML = `<div class="over">
@@ -331,16 +350,12 @@ function renderOver(){
       <div class="mini"><div class="n a">${acc}%</div><div class="l">正确率</div></div>
       <div class="mini"><div class="n">${game.combo}</div><div class="l">最高连击</div></div>
     </div>
-    <div class="weak-list">
-      <h3>📌 要重点背的理由</h3>
-      ${weakList || '<div class="empty-note">全部答对，太稳了！</div>'}
-    </div>
+    <div class="weak-list"><h3>📌 要重点背的</h3>${weakList || '<div class="empty-note">全部答对，太稳了！</div>'}</div>
     <button class="big-btn" id="againBtn">再来一局</button>
     <button class="big-btn" id="homeBtn" style="background:var(--surface-2);color:var(--ink-2);margin-top:10px">返回设置</button>
   </div>`;
 }
 
-/* ================= 主题 ================= */
 function applyTheme(){
   document.documentElement.setAttribute('data-theme', theme);
   $('#icSun').style.display = theme==='dark'?'none':'block';
@@ -352,14 +367,20 @@ $('#themeBtn').addEventListener('click', ()=>{
   applyTheme();
 });
 
-/* ================= 事件（委托） ================= */
 let selMode = 'mix', selRounds = 'r10';
 app.addEventListener('click', e=>{
+  const bb = e.target.closest('[data-bank]');
+  if(bb){
+    bank = bb.dataset.bank;
+    selMode = 'mix';
+    renderStart();
+    return;
+  }
   const mb = e.target.closest('[data-mode]');
   if(mb){
     selMode = mb.dataset.mode;
     document.querySelectorAll('[data-mode]').forEach(b=>b.classList.toggle('on', b===mb));
-    $('#modeDesc').textContent = MODES[selMode].d;
+    $('#modeDesc').textContent = modesOf()[selMode].d;
     return;
   }
   const rb = e.target.closest('[data-round]');
